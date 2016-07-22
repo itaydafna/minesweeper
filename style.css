@@ -1,0 +1,48 @@
+body {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    /*border: 1px solid black;*/
+    height: 30px;
+    width: 30px;
+    /*border-radius: 20%;*/
+    transition: all 200ms;
+    position: relative;
+}
+
+.game-board {
+    margin: 10px auto;
+    transform-origin: 50% 50%;
+    transition: all 500ms;
+}
+
+.mine {
+    background: url(mine.png) no-repeat;
+    background-size: 95%;
+    background-position: 50% 50%;
+}
+
+
+.lid {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    z-index:500;
+    background: url(lid2.jpg) repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    /*display: none;*/
+}
+
+.number {
+    position: absolute;
+    z-index: 200;
+    top: 25%;
+    left: 35%;
+}

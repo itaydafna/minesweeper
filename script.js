@@ -82,6 +82,22 @@ GameBoard.prototype.createGameBoard = function (gridSize) {
 }
 
 
+GameBoard.prototype.resetGameBoard = function () {
+    //dlelete current table
+    document.body.removeChild(document.querySelector(".game-board"));
+
+    // reset timer
+
+    clearTimeout(pauseTimer);
+    var timer = document.querySelector(".current-sec");
+    timer.textContent = 0;
+
+    //create a new one instead
+    newGameBoard();
+
+
+}
+
 /////////////
 //functions//
 /////////////
@@ -383,8 +399,14 @@ function flagToggle(event){
 
 function updatePanelCounter(number){
     var mineCounter = document.querySelector(".mine-total");
+    if (number===0){
+        var checkButton = document.querySelector(".check");
+        checkButton.id = "done-flagging";
+    }
     mineCounter.textContent = number;
 }
+
+
 
 //declaring a global variable which will allow me to pause timer (clearTimeout) after game over or win
 var pauseTimer;
@@ -410,7 +432,7 @@ function gameOver (){
             if(lid!==null)
             {td.removeChild(lid)};})
     clearTimeout(pauseTimer);
-    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poo :(\nRefresh page to try again")},200);
+    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poo :(\nClick 'Restart' to try again")},200);
 }
 
 
@@ -443,29 +465,37 @@ function verify(){
 
     if (success===true){
         clearTimeout(pauseTimer);
-    alert("HURRAY!\nYou Made It!\n You found all the poo and didn't step on any :)\nRefresh page to play again")} else{
+    alert("HURRAY!\nYou Made It!\n You found all the poo and didn't step on any :)\nClick 'Restart' to play again")} else{
         gameOver();
     }
 }
 
 
 
+
+//check button element and "click" event listener;
+
 var check = document.querySelector(".check");
 check.addEventListener("click",verify);
 
 
 
-
 //this gets everything started
-
+function newGameBoard () {
 var testTable = new GameBoard();
 testTable.createGameBoard();
 testTable.render();
 numberEmptyCells(testTable);
 setTimeout(updateTimer,1000);
+    return testTable;
+}
 
+var testTable = newGameBoard();
 
+// reset button element and "click" event listener;
 
+var check = document.querySelector(".restart");
+check.addEventListener("click",GameBoard.prototype.resetGameBoard.bind(testTable));
 
 
 

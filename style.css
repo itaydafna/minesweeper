@@ -2,10 +2,28 @@ body {
     height: 100%;
     position: absolute;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0;
     padding: 0;
+    background: url(Florentine-Tel-Aviv.jpg) no-repeat;
+    background-size: cover;
 }
+
+/*heading styling*/
+.header {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    width: 200px;
+}
+
+h1{
+     text-align: center;
+     background: white;
+     display: inline-block;
+ }
+
+/*gameboard styling*/
 
 td,
 .lid,
@@ -33,6 +51,7 @@ td {
     margin: 40px auto;
     transform-origin: 50% 50%;
     transition: all 500ms;
+    background: white;
 }
 
 .mine {
@@ -76,9 +95,10 @@ td {
     justify-content: space-around;
     position: absolute;
     width: 200px;
-    height: 100px;
+    height: 160px;
     border: 1px solid gray;
     box-shadow: 5px 5px 5px;
+    background: white;
 }
 .panel span {
     display: block;
@@ -109,7 +129,13 @@ td {
 
 /*check button*/
 
+.restart,
 .check {
    font-size: 1.5rem;
     border-radius: 5%;
+}
+
+
+#done-flagging {
+    color: green;
 }

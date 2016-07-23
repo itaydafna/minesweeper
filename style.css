@@ -70,7 +70,7 @@ td {
 
 .panel {
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -104,4 +104,12 @@ td {
 .panel img {
    height: 30px;
     width: auto;
+}
+
+
+/*check button*/
+
+.check {
+   font-size: 1.5rem;
+    border-radius: 5%;
 }

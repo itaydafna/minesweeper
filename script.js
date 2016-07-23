@@ -77,7 +77,10 @@ GameBoard.prototype.createGameBoard = function (gridSize) {
         row.el.dataset.row = i;
         this.el.appendChild(row.el);
     }
+    // this renders the initial number of mines to the panel
+    updatePanelCounter(this.mineCounter);
 }
+
 
 /////////////
 //functions//
@@ -216,7 +219,7 @@ function removeLid(event){
 
 function afterLidOff(event){
     if (event.target.className === "mine"){
-        alert ("game over!");
+        gameOver();
     } else if
     (event.target.dataset.numInCell === "0"){
         lidOffNeigborCells(event.target);
@@ -352,21 +355,105 @@ function lidOffNeigborCells(td) {
 
 }
 
+//function that controls flag toggle
 
 function flagToggle(event){
+    var mineCounter = document.querySelector(".mine-total"),
+        mineTotal = Number(mineCounter.textContent);
     event.preventDefault();
     if (event.target.dataset.flagged === "no"){
         event.target.dataset.flagged = "yes";
         var flag = document.createElement("div");
         flag.className = "flag";
         event.target.appendChild(flag);
+        mineTotal--;
+        updatePanelCounter(mineTotal);
+
     } else if
     (event.target.className === "flag"){
         event.target.parentNode.dataset.flagged = "no";
         event.target.parentNode.removeChild(event.target);
+        mineTotal++;
+        updatePanelCounter(mineTotal);
     }
 
 }
+
+//function that updates the mine counter on panel
+
+function updatePanelCounter(number){
+    var mineCounter = document.querySelector(".mine-total");
+    mineCounter.textContent = number;
+}
+
+//declaring a global variable which will allow me to pause timer (clearTimeout) after game over or win
+var pauseTimer;
+//function that updates timer
+function updateTimer(){
+    var timer = document.querySelector(".current-sec"),
+        currentTime = Number(timer.textContent);
+    currentTime++;
+    timer.textContent = currentTime;
+    pauseTimer = setTimeout(updateTimer,1000);
+}
+
+
+
+
+
+function gameOver (){
+    var cellsNodeList = document.querySelectorAll("td"),
+        cellsArray = Array.prototype.slice.call(cellsNodeList);
+        cellsArray.forEach(function(td){
+            var lid = td.querySelector(".lid"),
+                flag = td.querySelector(".flag");
+            if(lid!==null)
+            {td.removeChild(lid)};})
+    clearTimeout(pauseTimer);
+    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poo :(\nRefresh page to try again")},200);
+}
+
+
+//this function verifies if correct when player is done flagging
+
+function verify(){
+    var cellsNodeList = document.querySelectorAll("td"),
+        success = true;
+        cellsArray = Array.prototype.slice.call(cellsNodeList);
+        cellsArray.forEach(function(td) {
+                var lid = td.querySelector(".lid");
+                //detects "false-positive" cases
+
+                if ((lid !==null)&&(lid.dataset.flagged === "yes")) {
+                    if (td.className === "no-mine") {
+                        success = false;
+
+                    }
+                }
+                ;
+                //detects "false-negetive" cases
+
+                if ((lid !==null)&&(lid.dataset.flagged === "no")) {
+                    if (td.className === "mine") {
+                        success = false;
+                    }
+                }
+            }
+        )
+
+    if (success===true){
+        clearTimeout(pauseTimer);
+    alert("HURRAY!\nYou Made It!\n You found all the poo and didn't step on any :)\nRefresh page to play again")} else{
+        gameOver();
+    }
+}
+
+
+
+var check = document.querySelector(".check");
+check.addEventListener("click",verify);
+
+
 
 
 //this gets everything started
@@ -375,6 +462,7 @@ var testTable = new GameBoard();
 testTable.createGameBoard();
 testTable.render();
 numberEmptyCells(testTable);
+setTimeout(updateTimer,1000);
 
 
 

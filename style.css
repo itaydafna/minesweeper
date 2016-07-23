@@ -45,7 +45,7 @@ td {
 .lid {
     position: relative;
     z-index:500;
-    background: url(lid2.jpg) repeat;
+    background: url(lid3.jpg) repeat;
     background-size: cover;
     background-position: 50% 50%;
     /*display: none;*/

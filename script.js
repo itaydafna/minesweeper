@@ -39,6 +39,7 @@ function TableRow() {
 function GameBoard() {
     this.el = document.createElement("table");
     this.el.className = "game-board";
+    this.mineCounter = 0;
 }
 
 GameBoard.prototype.createCellsArray = function () {
@@ -52,8 +53,8 @@ GameBoard.prototype.render = function () {
 }
 
 GameBoard.prototype.createGameBoard = function (gridSize) {
-    //if gridSize is not passed it will be given a random number between 5 and 24
-    var gridSize = gridSize || Math.floor(20 * Math.random()) + 5,
+    //if gridSize is not passed it will be given a random number between 5 and 18
+    var gridSize = gridSize || Math.floor(13 * Math.random()) + 5,
         i = 0;
 
     for (i; i < gridSize; i++) {
@@ -67,6 +68,11 @@ GameBoard.prototype.createGameBoard = function (gridSize) {
             cell.el.addEventListener("lidOff",afterLidOff.bind(cell));
             cell.el.appendChild(lid.el);
             row.el.appendChild(cell.el);
+            
+            //condition which counts each mine which is added to the board
+            if (cell.el.className === "mine"){
+                this.mineCounter ++;
+            }
         }
         row.el.dataset.row = i;
         this.el.appendChild(row.el);

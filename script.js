@@ -398,10 +398,12 @@ function flagToggle(event){
 //function that updates the mine counter on panel
 
 function updatePanelCounter(number){
-    var mineCounter = document.querySelector(".mine-total");
+    var mineCounter = document.querySelector(".mine-total"),
+        checkButton = document.querySelector(".check");
     if (number===0){
-        var checkButton = document.querySelector(".check");
         checkButton.id = "done-flagging";
+    } else {
+        checkButton.id = "";
     }
     mineCounter.textContent = number;
 }

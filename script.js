@@ -432,7 +432,7 @@ function gameOver (){
             if(lid!==null)
             {td.removeChild(lid)};})
     clearTimeout(pauseTimer);
-    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poo :(\nClick 'Restart' to try again")},200);
+    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poop :(\nClick 'Restart' to try again")},200);
 }
 
 
@@ -465,7 +465,7 @@ function verify(){
 
     if (success===true){
         clearTimeout(pauseTimer);
-    alert("HURRAY!\nYou Made It!\n You found all the poo and didn't step on any :)\nClick 'Restart' to play again")} else{
+    alert("HURRAY!\nYou Made It!\n You found all the poop and didn't step on any :)\nClick 'Restart' to play again")} else{
         gameOver();
     }
 }

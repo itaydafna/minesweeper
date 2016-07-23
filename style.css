@@ -1,27 +1,30 @@
 body {
-    height: 100%;
-    position: absolute;
-    width: 100%;
+    /*height: 100%;*/
+    /*position: absolute;*/
+    /*width: 100%;*/
     /*overflow: hidden;*/
-    margin: 0;
-    padding: 0;
+    /*margin: 0;*/
+    /*padding: 0;*/
     background: url(Florentine-Tel-Aviv.jpg) no-repeat;
     background-size: cover;
 }
 
-/*heading styling*/
-.header {
-    display: inline-block;
-    text-align: center;
-    margin: 0 auto;
-    width: 200px;
-}
 
-h1{
-     text-align: center;
-     background: white;
-     display: inline-block;
- }
+h1 {
+    text-align: center;
+    width: 45%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: #ff1ef5;
+    font-family: "Comic Sans MS";
+    font-size: 3rem;
+    background: url(poop-panel.jpg);
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10%;
+    text-shadow: black 5px 5px 5px;
+    box-shadow: black 5px 5px 5px;
+}
 
 /*gameboard styling*/
 
@@ -41,14 +44,14 @@ td {
 }
 
 .no-mine[data-num-in-cell='0'] {
-    background:no-repeat;
+    background: no-repeat;
     background-size: 70%;
     background-position: 50% 50%;
 
 }
 
 .game-board {
-    margin: 40px auto;
+    margin: 10px auto;
     transform-origin: 50% 50%;
     transition: all 500ms;
     background: white;
@@ -60,10 +63,9 @@ td {
     background-position: 50% 50%;
 }
 
-
 .lid {
     position: relative;
-    z-index:500;
+    z-index: 500;
     background: url(lid3.jpg) repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -85,8 +87,6 @@ td {
 
 /*stying panel*/
 
-
-
 .panel {
     margin-top: 20px;
     margin-left: 30px;
@@ -100,12 +100,11 @@ td {
     box-shadow: 5px 5px 5px;
     background: white;
 }
+
 .panel span {
     display: block;
     font-size: 1.8rem;
 }
-
-
 
 .mine-tracker {
     width: 180px;
@@ -122,19 +121,17 @@ td {
 }
 
 .panel img {
-   height: 30px;
+    height: 30px;
     width: auto;
 }
-
 
 /*check button*/
 
 .restart,
 .check {
-   font-size: 1.5rem;
+    font-size: 1.5rem;
     border-radius: 5%;
 }
-
 
 #done-flagging {
     color: green;

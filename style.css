@@ -7,13 +7,26 @@ body {
     padding: 0;
 }
 
-td {
-    /*border: 1px solid black;*/
+td,
+.lid,
+.flag {
     height: 30px;
     width: 30px;
+}
+
+td {
+    /*border: 1px solid black;*/
+
     /*border-radius: 20%;*/
     transition: all 200ms;
     position: relative;
+}
+
+.no-mine[data-num-in-cell='0'] {
+    background:no-repeat;
+    background-size: 70%;
+    background-position: 50% 50%;
+
 }
 
 .game-board {

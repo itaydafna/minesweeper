@@ -173,6 +173,10 @@ function addNumbers(td){
                 numInCell.textContent = neighborMinesNum;
                 numInCell.className = "number";
                 td.appendChild(numInCell);
+        } else {
+            //random number between 1 and 3
+            var randomDog = Math.floor(3*Math.random())+1
+            td.style.backgroundImage = "url(dog-pooping"+randomDog+".png)"
         }
     }
 }

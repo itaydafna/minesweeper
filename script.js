@@ -99,6 +99,8 @@ GameBoard.prototype.resetGameBoard = function () {
     //create a new one instead
     newGameBoard();
 
+    //re-add "check!" click event listener
+    check.addEventListener("click",verify);
 
 }
 
@@ -484,6 +486,7 @@ function verify(){
     } else{
         gameOver();
     }
+    check.removeEventListener("click",verify);
 }
 
 
@@ -510,8 +513,8 @@ var testTable = newGameBoard();
 
 // reset button element and "click" event listener;
 
-var check = document.querySelector(".restart");
-check.addEventListener("click",GameBoard.prototype.resetGameBoard.bind(testTable));
+var restart = document.querySelector(".restart");
+restart.addEventListener("click",GameBoard.prototype.resetGameBoard.bind(testTable));
 
 
 

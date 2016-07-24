@@ -7,12 +7,12 @@ function GameOverIcon(){
 }
 
 GameOverIcon.prototype.moveDown = function(){
-    this.el.style.transform = "translateY(100%)";
+    this.el.style.transform = "translateY(5%)";
     return "down";
 }
 
 GameOverIcon.prototype.moveUp = function(){
-    this.el.style.transform = "translateY(-80%)";
+    this.el.style.transform = "translateY(-5%)";
     return "up";
 }
 
@@ -21,10 +21,11 @@ GameOverIcon.prototype.bounce = function () {
     var that = this;
     var down = new Promise(function(fulfill,reject){
         that.moveDown();
-        setTimeout(fulfill,1000);
+        setTimeout(fulfill,200);
+
     });
     down.then(that.moveUp.bind(that)).then(function(){
-        setTimeout(that.bounce.bind(that),1000);
+        setTimeout(that.bounce.bind(that),200);
     });
 
 }

@@ -149,5 +149,5 @@ td {
     background-size: cover;
     background-position: 50% 50%;
     box-shadow: black 5px 5px 5px;
-    transition: all 1s;
+    transition: transform 200ms;
 }

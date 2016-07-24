@@ -136,3 +136,18 @@ td {
 #done-flagging {
     color: green;
 }
+
+/*game over icon*/
+
+.game-over-icon {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    background-size: cover;
+    background-position: 50% 50%;
+    box-shadow: black 5px 5px 5px;
+    transition: all 1s;
+}

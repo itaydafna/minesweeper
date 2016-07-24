@@ -92,6 +92,10 @@ GameBoard.prototype.resetGameBoard = function () {
     var timer = document.querySelector(".current-sec");
     timer.textContent = 0;
 
+    //remove gameover icon
+    if(document.body.querySelector(".game-over-icon")) {
+        removeGameOverIcon()
+    }
     //create a new one instead
     newGameBoard();
 
@@ -434,7 +438,12 @@ function gameOver (){
             if(lid!==null)
             {td.removeChild(lid)};})
     clearTimeout(pauseTimer);
-    setTimeout(function(){alert("GAME OVER\nOH NO!\nYou stepped on some dog-poop :(\nClick 'Restart' to try again")},200);
+    alert("GAME OVER\nOH NO!\nYou stepped on some dog-poop :(\nClick 'Restart' to try again");
+
+    //makes game-over icon bounce on screen;
+    var gameOverIcon = new GameOverIcon();
+    gameOverIcon.el.style.background = "url(game-over.png) no-repeat"
+    gameOverIcon.bounce();
 }
 
 
@@ -467,7 +476,12 @@ function verify(){
 
     if (success===true){
         clearTimeout(pauseTimer);
-    alert("HURRAY!\nYou Made It!\n You found all the poop and didn't step on any :)\nClick 'Restart' to play again")} else{
+
+    alert("HURRAY!\nYou Made It!\n You found all the poop and didn't step on any :)\nClick 'Restart' to play again")
+        var gameOverIcon = new GameOverIcon();
+        gameOverIcon.el.style.background = "url(success.jpg) grey no-repeat"
+        gameOverIcon.bounce();
+    } else{
         gameOver();
     }
 }

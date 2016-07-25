@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53e5cd1c-f136-4f11-9017-0a810b9c0d80" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-    </list>
+    <list default="true" id="53e5cd1c-f136-4f11-9017-0a810b9c0d80" name="Default" comment="" />
     <ignored path="minesweeper.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -208,12 +205,12 @@
       <updated>1469201818136</updated>
       <workItem from="1469201820146" duration="11487000" />
       <workItem from="1469222737456" duration="41837000" />
-      <workItem from="1469389669083" duration="3991000" />
+      <workItem from="1469389669083" duration="4123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57315000" />
+    <option name="totallyTimeSpent" value="57447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />

@@ -5,7 +5,7 @@ body {
     /*overflow: hidden;*/
     /*margin: 0;*/
     /*padding: 0;*/
-    background: url(img/Florentine-Tel-Aviv.jpg) no-repeat;
+    background: url(../img/Florentine-Tel-Aviv.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -18,7 +18,7 @@ h1 {
     color: #ff1ef5;
     font-family: "Comic Sans MS";
     font-size: 3rem;
-    background: url(img/poop-panel.jpg);
+    background: url(../img/poop-panel.jpg);
     display: inline-block;
     padding: 15px;
     border-radius: 10%;
@@ -58,7 +58,7 @@ td {
 }
 
 .mine {
-    background: url(img/mine.png) no-repeat;
+    background: url(../img/mine.png) no-repeat;
     background-size: 95%;
     background-position: 50% 50%;
 }
@@ -66,7 +66,7 @@ td {
 .lid {
     position: relative;
     z-index: 500;
-    background: url(img/lid3.jpg) repeat;
+    background: url(../img/lid3.jpg) repeat;
     background-size: cover;
     background-position: 50% 50%;
     /*display: none;*/
@@ -80,7 +80,7 @@ td {
 }
 
 .flag {
-    background: url(img/flag.png) no-repeat;
+    background: url(../img/flag.png) no-repeat;
     background-position: 50% 50%;
     background-size: 80%;
 }
